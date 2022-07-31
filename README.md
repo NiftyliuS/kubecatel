@@ -1,2 +1,2 @@
 # kubecatel
-Kubernetes UI
+Kubernetes UI.
