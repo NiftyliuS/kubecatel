@@ -27,6 +27,8 @@ const createWindow = (): void => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+  mainWindow.setAlwaysOnTop(true, "normal");
+  mainWindow.setAlwaysOnTop(false, "normal");
 };
 
 // This method will be called when Electron has finished
