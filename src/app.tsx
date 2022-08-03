@@ -1,5 +1,4 @@
 import React, {Component, Suspense} from 'react'
-import * as ReactDOM from 'react-dom';
 import {HashRouter, Route, Routes} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import store from './store'
@@ -22,7 +21,6 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 class App extends Component {
     render() {
-
         return (<Provider store={store}>
             <HashRouter>
                 <Suspense fallback={loading}>
@@ -36,8 +34,8 @@ class App extends Component {
                 </Suspense>
             </HashRouter>
         </Provider>)
-
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+export default App;
+

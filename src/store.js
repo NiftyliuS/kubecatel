@@ -1,11 +1,10 @@
-import { createStore } from 'redux'
+import {configureStore, getDefaultMiddleware} from '@reduxjs/toolkit'
 
 const initialState = {
   sidebarShow: true,
 }
 
 const changeState = (state = initialState, { type, ...rest }) => {
-  console.log("changeState", rest)
   switch (type) {
     case 'set':
       return { ...state, ...rest }
@@ -14,5 +13,8 @@ const changeState = (state = initialState, { type, ...rest }) => {
   }
 }
 
-const store = createStore(changeState)
+const store = configureStore({
+  reducer: changeState,
+  preloadedState: initialState,
+})
 export default store
