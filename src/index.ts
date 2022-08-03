@@ -50,8 +50,8 @@ const createWindow = (): void => {
 
     loadingEvents.on('finished', () => {
         splash.close();
+        mainWindow.hide();
         mainWindow.show();
-        mainWindow.center();
     })
     setTimeout(function () {
        loadingEvents.emit('finished');
